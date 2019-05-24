@@ -1,0 +1,32 @@
+# -------------------------------------------------MongoDB---------------------------------------------------
+开启mongo(后台,命令)
+mongod --fork \
+--dbpath=/home/yangshaojie/app/mongodb/mongodb-linux-x86_64-3.0.6/db \
+--logpath=/home/yangshaojie/app/mongodb/mongodb-linux-x86_64-3.0.6/logs
+# -----------------------------------------------------------------------------------------------------------
+关闭mongo(后台,命令)
+mongod --shutdown \
+--dbpath=/home/yangshaojie/app/mongodb/mongodb-linux-x86_64-3.0.6/db \
+--logpath=/home/yangshaojie/app/mongodb/mongodb-linux-x86_64-3.0.6/logs
+# -----------------------------------------------------------------------------------------------------------
+修复mongo
+mongod --repair \
+--dbpath=/home/yangshaojie/app/mongodb/mongodb-linux-x86_64-3.0.6/db \
+--logpath=/home/yangshaojie/app/mongodb/mongodb-linux-x86_64-3.0.6/logs
+# -----------------------------------------------------------------------------------------------------------
+touch mongo.conf
+vim mongo.conf
+	dbpath=/home/yangshaojie/app/mongodb/mongodb-linux-x86_64-3.0.6/db
+	logpath=/home/yangshaojie/app/mongodb/mongodb-linux-x86_64-3.0.6/logs
+	logappend=true
+	port=27017
+	fork=true
+# -----------------------------------------------------------------------------------------------------------
+开启mongo(后台,文件)
+mongod \
+-f /home/yangshaojie/app/mongodb/mongodb-linux-x86_64-3.0.6/mongo.conf
+# -----------------------------------------------------------------------------------------------------------
+# 关闭mongo
+mongod --shutdown \
+-f /home/yangshaojie/app/mongodb/mongodb-linux-x86_64-3.0.6/mongo.conf
+# -----------------------------------------------------------------------------------------------------------
